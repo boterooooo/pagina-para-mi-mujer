@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti</title>
+    <style>
+        body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh;  ❌ Esto es el problema */
+    min-height: 100vh; /* ✅ Esto sí permite crecer */
+    margin: 0;
+    padding: 20px; /* para que el texto no quede pegado al borde */
+}
+        .container {
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        .options {
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .message {
+            color: red;
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+        
+        .instruction {
+            color: red;
+            font-style: italic;
+            margin-top: 30px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .love-letter {
+            margin-top: 20px;
+            line-height: 1.6;
+            text-align: left;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .image-gallery img {
+            margin: 10px;
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Primera pantalla con la pregunta -->
+    <div id="question-screen" class="container">
+        <h2>¿Crees que te dejaría?</h2>
+        <div class="options">
+            <button id="yes-btn">Sí</button>
+            <button id="no-btn">No</button>
+        </div>
+    </div>
+
+    <!-- Pantalla de respuesta negativa -->
+    <div id="no-screen" class="container hidden">
+        <div class="image-container">
+            <!-- Reemplaza "ruta-a-la-imagen-no.jpg" con la ruta real de tu imagen "no" -->
+            <img id="no-image" src="no.jpg" alt="Imagen de respuesta negativa" style="max-width: 300px;">
+        </div>
+        <p class="message">¿SEGURA?</p>
+        <p class="instruction">(reinicia la página y selecciona la otra opción, quien te manda decir eso pendeja)</p>
+    </div>
+
+    <!-- Pantalla de respuesta positiva -->
+    <div id="yes-screen" class="container hidden">
+        <h1>El amor que empieza y nunca termina</h1>
+        <div class="love-letter">
+            <p>De verdad crees que te dejaría?</p>
+            <p>Dejaré a la niña que a pesar de mis errores, me perdonó y me dio la oportunidad de demostrarle que era diferente, a la niña que a pesar de todo sigue esforzándose y dando todo de ella cada día que pasa, a la niña que siempre está para mí y se preocupa por mí, a la niña que me ha enseñado que el amor no duele, a la niña que es buena persona, a la niña que me ha hecho sentir amado, cómodo y sobre todo feliz, a la niña que con solo una palabra, una sonrisa, un saludo, hace que mi día mejore, a la niña que me ha motivado a cambiar, a la niña que pienso todos los días, a la niña con que puedo ser yo libremente, a la niña con que tengo total libertad, a la niña que a pesar de que se sienta mal, estará ahí para ti, a la niña con mi mismo humor, la niña que jamás me ha hecho sobrepensar, la niña que no me ha lastimado, la niña que en poco tiempo ha demostrado ser más que muchos en años, a la niña que amo en general, la niña con que quiero todo, la niña que quiero que me acompañe por el resto de mis días.</p>
+            <p>Has sido una persona tan determinante para mí, me has dado lo que siempre había querido en una relación, eres mi mujer soñada, no sabes lo mucho que te amo Angie, todo contigo en mi vida ha mejorado, incluso la relación con mi propia familia y conmigo mismo, porque me has ayudado a encontrarme, has sido mi amuleto, y el día que me faltes, irónicamente siempre estarás, ya que has dejado marca en mi corazón, tatuaste tu nombre en él, nadie ni nada podrá sacarlo o reemplazarlo, eres tan hermosa que es indescriptible todo lo que me haces sentir en un instante, la mujer que me vuelve loco, la que me fascina, la que es mía, la que amo, eres mi todo, tus ojos son algo que jamás dejaré de ver, te amo mucho Angie, no sabes lo feliz que me haces mi niña hermosa.</p>
+        </div>
+        <div class="image-gallery">
+            <!-- Reemplaza con las rutas reales a tus imágenes -->
+            <img src="angie 1.jpg" alt="Angie 1">
+            <img src="angie 2.jpg" alt="Angie 2">
+            <img src="angie 3.jpg" alt="Angie 3">
+            <img src="angie 4.jpg" alt="Angie 4">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('yes-btn').addEventListener('click', function() {
+            document.getElementById('question-screen').classList.add('hidden');
+            document.getElementById('yes-screen').classList.remove('hidden');
+        });
+
+        document.getElementById('no-btn').addEventListener('click', function() {
+            document.getElementById('question-screen').classList.add('hidden');
+            document.getElementById('no-screen').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
